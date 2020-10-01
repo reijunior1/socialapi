@@ -18,14 +18,6 @@ public class Comentario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	public Livro getLivro() {
-		return livro;
-	}
-
-	public void setLivro(Livro livro) {
-		this.livro = livro;
-	}
 
 	private String texto;
 	
@@ -68,6 +60,14 @@ public class Comentario {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 
 }
