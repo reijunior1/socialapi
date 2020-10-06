@@ -48,7 +48,7 @@ public class LivrosResources {
 		Livro livro = livrosService.buscar(id);
 		
 		
-		CacheControl cacheControl = CacheControl.maxAge(20, TimeUnit.SECONDS);
+		CacheControl cacheControl = CacheControl.maxAge(100, TimeUnit.SECONDS);
 		
 		
 		return ResponseEntity.status(HttpStatus.OK).cacheControl(cacheControl).body(livro);
