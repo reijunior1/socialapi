@@ -28,7 +28,7 @@ public class LivrosService {
 	}
 	
 	public Livro buscar(Long id) {
-		Livro livro = livrosRepository.findById(id).orElse(null);
+		Livro livro = livrosRepository.findOne(id);
 		
 		if(livro == null) {
 			throw new LivroNaoEncontradoException("O Livro não pode ser encontrado.");
@@ -44,7 +44,7 @@ public class LivrosService {
 	
 	public void deletar( Long id) {
 		try {
-			livrosRepository.deleteById(id);
+			livrosRepository.delete(id);
 		} catch (EmptyResultDataAccessException e) {
 			throw new LivroNaoEncontradoException("Livro não pode ser encontrado.");
 		}
